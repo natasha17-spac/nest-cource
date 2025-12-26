@@ -4,10 +4,7 @@ import {
   type ValidationArguments,
 } from 'class-validator';
 
-export function StartWith(
-  prefix: string,
-  validationOptions?: ValidationOptions,
-) {
+export function StartWith(prefix: string, validationOptions?: ValidationOptions) {
   return (object: Record<string, any>, propertyName: string) => {
     registerDecorator({
       name: 'startWith',
