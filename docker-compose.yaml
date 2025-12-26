@@ -3,7 +3,7 @@ version: '3.9'
 services:
   postgres:
     container_name: postgres_123
-    image: postgres:latest
+    image: postgres:16
     restart: always
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
@@ -12,7 +12,7 @@ services:
     ports:
       - '5433:5432'
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
     networks:
       - nestjs_course
 
