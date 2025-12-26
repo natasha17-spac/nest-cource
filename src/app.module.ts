@@ -22,6 +22,7 @@ import { ReviewModule } from './review/review.module';
         database: configService.getOrThrow<string>('POSTGRES_DATABASE'),
         autoLoadEntities: true,
         synchronize: true,
+        schema: 'public',
       }),
       inject: [ConfigService],
     }),

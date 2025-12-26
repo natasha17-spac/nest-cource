@@ -1,3 +1,4 @@
+import { MovieDto } from './dto/create-movie.dto';
 import { MovieService } from './movie.service';
 import { Controller, Get, Param, Body, Post, Put, Delete } from '@nestjs/common';
 
@@ -17,7 +18,7 @@ export class MovieController {
 
   @Put(':id')
   update(@Param('id') id: string, @Body() dto: MovieDto) {
-    return this.movieService.update(+id, dto);
+    return this.movieService.update(id, dto);
   }
 
   @Delete(':id')

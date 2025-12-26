@@ -4,6 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   Generated,
+  JoinColumn,
   ManyToOne,
   PrimaryColumn,
   UpdateDateColumn,
@@ -18,6 +19,8 @@ export class ReviewEntity {
   @Column({
     type: 'text',
   })
+  text: string;
+
   @Column({
     type: 'decimal',
     precision: 3,
@@ -26,7 +29,10 @@ export class ReviewEntity {
   })
   rating: number;
 
-  @ManyToOne(() => MovieEntity, (movie) => movie.reviews)
+  @ManyToOne(() => MovieEntity, (movie) => movie.reviews, {
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn({ name: 'movie_id' })
   movie: MovieEntity;
 
   @CreateDateColumn({
