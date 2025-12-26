@@ -25,6 +25,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Learning NestJS - Movie and Task Management API.
+
 ## Project setup
 
 ```bash
