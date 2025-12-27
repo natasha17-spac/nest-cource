@@ -1,4 +1,14 @@
-import { IsBoolean, IsEnum, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
+import {
+  IsArray,
+  IsBoolean,
+  IsEnum,
+  IsInt,
+  IsOptional,
+  IsString,
+  IsUUID,
+  Max,
+  Min,
+} from 'class-validator';
 import { Genre } from '../entities/movie.entity';
 
 export class MovieDto {
@@ -26,4 +36,11 @@ export class MovieDto {
   @IsOptional()
   @IsEnum(Genre)
   genre?: Genre;
+
+  @IsArray()
+  @IsUUID('4', { each: true })
+  actorIds: string[];
+
+  @IsString()
+  imageUrl: string;
 }

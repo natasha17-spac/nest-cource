@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { ReviewEntity } from './entity/review.entity';
 import { Repository } from 'typeorm';
 import { ReviewDto } from './dto/create-review.dto';
-import { MovieService } from 'src/movie/movie.service';
+import { MovieService } from 'src/movies/movie.service';
 
 @Injectable()
 export class ReviewService {

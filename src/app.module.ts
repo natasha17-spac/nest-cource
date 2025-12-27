@@ -3,9 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TaskModule } from './task/task.module';
-import { MovieModule } from './movie/movie.module';
+import { MovieModule } from './movies/movie.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ReviewModule } from './review/review.module';
+import { ReviewModule } from './reviews/review.module';
+import { ActorModule } from './actors/actor.module';
 
 @Module({
   imports: [
@@ -26,9 +27,10 @@ import { ReviewModule } from './review/review.module';
       }),
       inject: [ConfigService],
     }),
-    TaskModule,
     MovieModule,
+    ActorModule,
     ReviewModule,
+    TaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
