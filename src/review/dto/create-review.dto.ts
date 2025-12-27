@@ -1,6 +1,6 @@
 import { IsNumber, IsString, IsUUID, Max, Min } from 'class-validator';
 
-export class MovieDto {
+export class ReviewDto {
   @IsString()
   text: string;
 

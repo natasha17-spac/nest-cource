@@ -6,6 +6,7 @@ import {
   Generated,
   OneToMany,
   PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
@@ -18,8 +19,7 @@ export enum Genre {
 
 @Entity({ name: 'movies' })
 export class MovieEntity {
-  @PrimaryColumn({ type: 'uuid' }) // Добавьте type: 'uuid'
-  @Generated('uuid')
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({
