@@ -1,14 +1,29 @@
-import { IsNumber, IsString, IsUUID, Max, Min } from 'class-validator';
+import { IsBoolean, IsEnum, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
+import { Genre } from '../entities/movie.entity';
 
 export class MovieDto {
   @IsString()
-  text: string;
+  title: string;
 
-  @IsNumber()
+  @IsOptional()
+  @IsString()
+  description?: string;
+
+  @IsInt()
+  @Min(1800)
+  @Max(2100)
+  releaseYear: number;
+
+  @IsOptional()
   @Min(0)
   @Max(10)
-  rating: number;
+  rating?: number;
 
-  @IsUUID('4')
-  movieId: string;
+  @IsOptional()
+  @IsBoolean()
+  isAvailable?: boolean;
+
+  @IsOptional()
+  @IsEnum(Genre)
+  genre?: Genre;
 }
