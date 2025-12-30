@@ -5,12 +5,14 @@ import { MovieModule } from './movies/movie.module';
 import { ConfigModule } from '@nestjs/config';
 import { ReviewModule } from './reviews/review.module';
 import { ActorModule } from './actors/actor.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    PrismaModule,
     MovieModule,
     ActorModule,
     ReviewModule,
