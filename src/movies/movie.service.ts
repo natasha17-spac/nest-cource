@@ -1,14 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { MovieEntity } from './entities/movie.entity';
-import { In, Repository } from 'typeorm';
-import { MovieDto } from './dto/create-movie.dto';
-import { ActorEntity } from 'src/actors/entities/actor.entity';
-import { MoviePosterEntity } from './entities/poster.entity';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class MovieService {
-  constructor(
+  /*  constructor(
     @InjectRepository(MovieEntity)
     private readonly movieRepository: Repository<MovieEntity>,
     @InjectRepository(ActorEntity)
@@ -91,5 +85,5 @@ export class MovieService {
     await this.movieRepository.remove(movie);
 
     return movie.id;
-  }
+  } */
 }
